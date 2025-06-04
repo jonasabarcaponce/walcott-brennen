@@ -12,7 +12,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'poppins': ['Poppins', ...defaultTheme.fontFamily.sans],
+                'lora': ['Lora', ...defaultTheme.fontFamily.serif],
             },
         },
     },

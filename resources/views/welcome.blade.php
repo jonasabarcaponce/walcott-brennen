@@ -6,12 +6,12 @@
   <title>Event Landing Page</title>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 font-poppins">
   <!-- Navbar -->
   <header class="shadow px-8 py-6">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <div class="text-xl font-bold">
-        Walcott <span class="font-light"> Brennen </span>
+      <div class="text-xl font-lora font-extrabold">
+        Walcott Brennen
       </div>
       @auth
         <nav class="space-x-6 hidden md:block">
