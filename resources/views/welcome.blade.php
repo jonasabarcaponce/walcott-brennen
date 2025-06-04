@@ -11,22 +11,44 @@
   <header class="shadow px-8 py-6">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <div class="text-xl font-bold">
-        SOCIETHY <span class="font-light">PARIS</span>
+        Walcott <span class="font-light"> Brennen </span>
       </div>
-      <nav class="space-x-6 hidden md:block">
-        <a href="#" class="hover:text-blue-500">Dashboard</a>
-        <a href="#" class="hover:text-blue-500">About</a>
-        <a href="#" class="hover:text-blue-500">Events</a>
-        <a href="#" class="hover:text-blue-500">Blogs</a>
-        <a href="#" class="hover:text-blue-500">Contact</a>
-      </nav>
-      @if (Route::has('login'))
-        <!-- You can add login/register links here if needed -->
-      @endif
-      <div class="space-x-4">
-        <button class="text-sm font-medium">Log In</button>
-        <button class="bg-black text-white px-4 py-2 text-sm rounded">Sign Up</button>
-      </div>
+      @auth
+        <nav class="space-x-6 hidden md:block">
+          <a href="#" class="hover:text-blue-500">Dasboard</a>
+          <a href="#" class="hover:text-blue-500">Account</a>
+        </nav>
+      @endauth
+      @guest
+        <div class="space-x-4">
+
+          <div x-data="{ open: false }" class="relative inline-block text-left">
+            <button @click="open = !open" type="button" class="inline-flex justify-center w-full rounded border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                @if(app()->getLocale() === 'es')
+                🇲🇽
+                @else
+                🇺🇸
+                @endif
+              <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7l3-3 3 3m0 6l-3 3-3-3" />
+              </svg>
+            </button>
+            <div x-show="open" @click.away="open = false" class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+              <form method="POST" action="{{ route('language') }}">
+                @csrf
+                <button type="submit" name="locale" value="en" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 {{ app()->getLocale() === 'en' ? 'font-bold' : '' }}">
+                  English
+                </button>
+                <button type="submit" name="locale" value="es" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 {{ app()->getLocale() === 'es' ? 'font-bold' : '' }}">
+                  Español
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <button class="bg-black text-white px-4 py-2 text-sm rounded">Sign Up</button>
+        </div>
+      @endguest 
     </div>
   </header>
 
@@ -34,22 +56,11 @@
   <section class="px-8 py-16 bg-gradient-to-br from-white to-gray-100 relative">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
       <div>
-        <p class="text-sm text-gray-600">All the fun starts here.</p>
+        <p class="text-sm text-gray-600">{{ __('Where unforgettable concerts come to life.') }}</p>
         <h1 class="text-4xl font-bold leading-tight mb-4">
-          Book your <br>
-          <span class="text-gray-800">Tickets for Event!</span>
+          <span class="text-gray-800">{{ __('Your access starts here') }}</span>
         </h1>
-        <ul class="space-y-2 mb-6">
-          <li class="flex items-center space-x-2">
-            <span class="text-green-500 font-bold">•</span>
-            <span>Safe, Secure, Reliable ticketing.</span>
-          </li>
-          <li class="flex items-center space-x-2">
-            <span class="text-green-500 font-bold">•</span>
-            <span>Your ticket to live entertainment!</span>
-          </li>
-        </ul>
-        <button class="bg-black text-white px-6 py-2 rounded">Lorem text →</button>
+        <button class="bg-black text-white px-6 py-2 rounded">{{ __('Get your tickets now') }} →</button>
       </div>
     </div>
   </section>
