@@ -21,7 +21,6 @@
       @endauth
       @guest
         <div class="space-x-4">
-
           <div x-data="{ open: false }" class="relative inline-block text-left">
             <button @click="open = !open" type="button" class="inline-flex justify-center w-full rounded border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none" id="menu-button" aria-expanded="true" aria-haspopup="true">
                 @if(app()->getLocale() === 'es')
@@ -45,8 +44,7 @@
               </form>
             </div>
           </div>
-
-          <button class="bg-black text-white px-4 py-2 text-sm rounded">Sign Up</button>
+            <button class="bg-black text-white px-4 py-2 text-sm rounded">{{ __('Login') }}</button>
         </div>
       @endguest 
     </div>
@@ -65,44 +63,33 @@
     </div>
   </section>
 
-  <!-- Featured Events -->
+  <!-- Featured Concerts -->
   <section class="px-8 py-16 bg-white">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-2xl font-bold mb-2">Featured Events</h2>
-      <p class="mb-6 text-gray-600">Be sure not to miss these Event today.</p>
+      <h2 class="text-2xl font-bold mb-2">{{ __('Coming Up Live') }}</h2>
+      <p class="mb-6 text-gray-600">{{ __('Your next favorite night is just a ticket away.') }}</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Card 1 -->
         <div class="border rounded overflow-hidden shadow">
-          <img src="https://via.placeholder.com/300x200" alt="">
+          <div class="aspect-w-16 aspect-h-9">
+            <img src="https://picsum.photos/1280/720" alt="Concert placeholder image" class="object-cover w-full h-full">
+          </div>
           <div class="p-4">
-            <p class="text-sm text-blue-600">€200 - €500</p>
+            <p class="text-sm text-blue-600 flex items-center">
+              <svg class="w-4 h-4 mr-1 inline-block text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.418 0-8-5.373-8-10a8 8 0 1116 0c0 4.627-3.582 10-8 10z" />
+              <circle cx="12" cy="11" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+              Cancun
+            </p>
             <h3 class="font-bold text-lg">Digital thinkers meetup</h3>
             <p class="text-sm text-gray-500">29 Jan | Grand Chapiteau</p>
-            <button class="mt-4 bg-gray-900 text-white px-4 py-2 rounded text-sm w-full">Get Tickets →</button>
-          </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="border rounded overflow-hidden shadow">
-          <img src="https://via.placeholder.com/300x200" alt="">
-          <div class="p-4">
-            <p class="text-sm text-blue-600">€100 - €800</p>
-            <h3 class="font-bold text-lg">Web design conference 2023</h3>
-            <p class="text-sm text-gray-500">29 Jan | Grand Chapiteau</p>
-            <button class="mt-4 bg-gray-900 text-white px-4 py-2 rounded text-sm w-full">Get Tickets →</button>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="border rounded overflow-hidden shadow">
-          <img src="https://via.placeholder.com/300x200" alt="">
-          <div class="p-4">
-            <p class="text-sm text-blue-600">€250 - €1200</p>
-            <h3 class="font-bold text-lg">Digital Economy Conference 2023</h3>
-            <p class="text-sm text-gray-500">29 Jan | Grand Chapiteau</p>
-            <button class="mt-4 bg-gray-900 text-white px-4 py-2 rounded text-sm w-full">Get Tickets →</button>
+            <button class="mt-4 bg-gray-900 text-white px-4 py-2 rounded text-sm w-full">{{ __('Get Tickets') }} →</button>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
 </body>
 </html>
