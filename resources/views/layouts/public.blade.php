@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Landing Page</title>
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-white text-gray-900 font-poppins">
   <!-- Navbar -->
@@ -50,46 +51,7 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="px-8 py-16 bg-gradient-to-br from-white to-gray-100 relative">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-      <div>
-        <p class="text-sm text-gray-600">{{ __('Where unforgettable concerts come to life.') }}</p>
-        <h1 class="text-4xl font-bold leading-tight mb-4">
-          <span class="text-gray-800">{{ __('Your access starts here') }}</span>
-        </h1>
-        <button class="bg-black text-white px-6 py-2 rounded">{{ __('Get your tickets now') }} →</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Concerts -->
-  <section class="px-8 py-16 bg-white">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-2xl font-bold mb-2">{{ __('Coming Up Live') }}</h2>
-      <p class="mb-6 text-gray-600">{{ __('Your next favorite night is just a ticket away.') }}</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <div class="border rounded overflow-hidden shadow">
-          <div class="aspect-w-16 aspect-h-9">
-            <img src="https://picsum.photos/1280/720" alt="Concert placeholder image" class="object-cover w-full h-full">
-          </div>
-          <div class="p-4">
-            <p class="text-sm text-blue-600 flex items-center">
-              <svg class="w-4 h-4 mr-1 inline-block text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.418 0-8-5.373-8-10a8 8 0 1116 0c0 4.627-3.582 10-8 10z" />
-              <circle cx="12" cy="11" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
-              </svg>
-              Cancun
-            </p>
-            <h3 class="font-bold text-lg">Digital thinkers meetup</h3>
-            <p class="text-sm text-gray-500">29 Jan | Grand Chapiteau</p>
-            <button class="mt-4 bg-gray-900 text-white px-4 py-2 rounded text-sm w-full">{{ __('Get Tickets') }} →</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
+  {{ $slot }}
+    
 </body>
 </html>
