@@ -15,6 +15,9 @@ export default {
                 'poppins': ['Poppins', ...defaultTheme.fontFamily.sans],
                 'lora': ['Lora', ...defaultTheme.fontFamily.serif],
             },
+            colors: {
+                'jamband' : '#cc060e',
+            },
         },
     },
 

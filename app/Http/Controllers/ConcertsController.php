@@ -16,6 +16,6 @@ class ConcertsController extends Controller
             ->orderBy('start_time')
             ->get();
 
-        return view('concerts.index', compact('concerts'));
+        return view('welcome', compact('concerts'));
     }
 }

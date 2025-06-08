@@ -21,6 +21,7 @@
     "dependencies": {
         "@fontsource/lora": "^5.2.5",
         "@fontsource/poppins": "^5.2.6",
+        "glob": "^11.0.2",
         "seatchart": "^0.1.0"
     }
 }
