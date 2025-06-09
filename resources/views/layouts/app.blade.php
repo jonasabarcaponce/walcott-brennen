@@ -4,17 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
         <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
     </head>
 
     <body class="font-poppins antialiased bg-gray-100 text-gray-900 dark:text-gray-300 dark:bg-gray-900">
         <div class="mx-auto items-center max-w-[1200px]">
             <div class="flex h-screen">
+
                 <!-- Sidebar for desktop -->
                 <nav class="hidden md:flex flex-col w-64 h-full">
                     <x-application-logo class="fill-current text-black dark:text-gray-600 mx-auto w-20 py-10 mb-3" />
@@ -55,7 +52,7 @@
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
                                         <button type="submit" class="bg-jamband text-quireBlack font-bold text-sm py-2 px-4 rounded-3xl text-white">
-                                            <i class="fa-solid fa-right-from-bracket mr-1"></i>
+                                            <i class="fa-solid fa-xmark mr-1"></i>
                                             {{ __('Log Out') }}
                                         </button>
                                     </form>

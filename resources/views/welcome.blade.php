@@ -11,9 +11,9 @@
   <!-- Navbar -->
   <header class="shadow px-8 py-6 bg-white dark:bg-gray-900 transition-colors">
     <div class="max-w-7xl mx-auto flex items-center">
-      <div class="text-xl font-lora font-extrabold text-gray-900 dark:text-white">
-        Walcott Brennen
-      </div>
+      
+      <x-application-logo class="fill-current text-black dark:text-gray-600 w-20" />
+
       <div class="flex items-center ml-auto space-x-6">
         @auth
           <nav class="space-x-6 hidden md:block">
