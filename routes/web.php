@@ -1,14 +1,23 @@
 <?php
 
-use App\Http\Controllers\ConcertsController;
+use App\Http\Controllers\ConcertController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
-Route::controller(ConcertsController::class)->group(function() {
-    Route::get('/','index')->name('clientes');
+Route::get('/', function () {
+    return view('welcome');
 });
+
+Route::get('/concerts', [ConcertController::class, 'index'])->name('concerts.index')->middleware('auth');
+Route::get('/concerts/{concert}', [ConcertController::class, 'show'])->name('concerts.show')->middleware('auth');
+Route::get('/concerts/create', [ConcertController::class, 'create'])->name('concerts.create')->middleware('auth');
+Route::post('/concerts', [ConcertController::class, 'store'])->name('concerts.store')->middleware('auth');
+Route::get('/concerts/{concert}/edit', [ConcertController::class, 'edit'])->name('concerts.edit')->middleware('auth');
+Route::put('/concerts/{concert}', [ConcertController::class, 'update'])->name('concerts.update')->middleware('auth');
+Route::delete('/concerts/{concert}', [ConcertController::class, 'destroy'])->name('concerts.destroy')->middleware('auth');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

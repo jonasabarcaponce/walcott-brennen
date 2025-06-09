@@ -46,7 +46,7 @@
                 </form>
               </div>
             </div>
-            <a href="{{ route('login') }}" class="bg-black dark:bg-white text-white dark:text-black px-4 py-2 text-sm rounded transition-colors">{{ __('Login') }}</a>
+            <a href="{{ route('login') }}" class="bg-black dark:bg-white text-white dark:text-black px-4 py-2 text-sm rounded transition-colors">{{ __('Log in') }}</a>
           </div>
         @endguest 
       </div>

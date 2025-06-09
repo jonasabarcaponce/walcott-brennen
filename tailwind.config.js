@@ -12,11 +12,11 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                'poppins': ['Poppins', ...defaultTheme.fontFamily.sans],
-                'lora': ['Lora', ...defaultTheme.fontFamily.serif],
+                poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
+                lora: ['Lora', ...defaultTheme.fontFamily.serif],
             },
             colors: {
-                'jamband' : '#cc060e',
+                jamband : '#FF0000',
             },
         },
     },
