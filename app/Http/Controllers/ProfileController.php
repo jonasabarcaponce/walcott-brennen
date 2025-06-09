@@ -37,6 +37,19 @@ class ProfileController extends Controller
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
+    public function updateLanguage(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'locale' => ['required', 'string', 'in:' . implode(',', array_keys(config('app.available_locales')))],
+        ]);
+
+        $user = $request->user();
+        $user->locale = $request->input('locale');
+        $user->save();
+
+        return Redirect::route('profile.edit')->with('status', 'language-updated');
+    }
+
     /**
      * Delete the user's account.
      */
