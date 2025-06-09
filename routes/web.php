@@ -10,19 +10,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/concerts', [ConcertController::class, 'index'])->name('concerts.index')->middleware('auth');
-Route::get('/concerts/{concert}', [ConcertController::class, 'show'])->name('concerts.show')->middleware('auth');
-Route::get('/concerts/create', [ConcertController::class, 'create'])->name('concerts.create')->middleware('auth');
-Route::post('/concerts', [ConcertController::class, 'store'])->name('concerts.store')->middleware('auth');
-Route::get('/concerts/{concert}/edit', [ConcertController::class, 'edit'])->name('concerts.edit')->middleware('auth');
-Route::put('/concerts/{concert}', [ConcertController::class, 'update'])->name('concerts.update')->middleware('auth');
-Route::delete('/concerts/{concert}', [ConcertController::class, 'destroy'])->name('concerts.destroy')->middleware('auth');
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::get('/concerts', [ConcertController::class, 'index'])->name('concerts.index')->middleware(['auth', 'verified']);
+Route::get('/concerts/{concert}', [ConcertController::class, 'show'])->name('concerts.show')->middleware(['auth', 'verified']);
+Route::get('/concerts/create', [ConcertController::class, 'create'])->name('concerts.create')->middleware(['auth', 'verified']);
+Route::post('/concerts', [ConcertController::class, 'store'])->name('concerts.store')->middleware(['auth', 'verified']);;
+Route::get('/concerts/{concert}/edit', [ConcertController::class, 'edit'])->name('concerts.edit')->middleware(['auth', 'verified']);
+Route::put('/concerts/{concert}', [ConcertController::class, 'update'])->name('concerts.update')->middleware(['auth', 'verified']);
+Route::delete('/concerts/{concert}', [ConcertController::class, 'destroy'])->name('concerts.destroy')->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
