@@ -8,6 +8,7 @@ export default defineConfig({
             input: [
                 ...glob.sync('resources/css/*'),
                 ...glob.sync('resources/js/*'),
+                ...glob.sync('resources/js/theaters/*.js'),
                 ...glob.sync('resources/img/*.png'),
                 ...glob.sync('resources/img/*.jpg'),
                 ...glob.sync('resources/img/*.ico'),
