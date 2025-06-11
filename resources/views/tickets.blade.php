@@ -55,7 +55,7 @@
 
       </div>
 
-      @vite(['resources/js/theaters/stoa.js'])
+      @vite(['resources/js/stoa.js'])
 
     </div>
   </section>
