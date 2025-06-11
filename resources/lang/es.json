@@ -38,5 +38,8 @@
   "Create Concert" : "Crear Concierto",
   "Edit Concert" : "Editar Concierto",
   "Analytics" : "Estadisticas",
-  "Shop" : "Tienda"
+  "Shop" : "Tienda", 
+  "     STAGE": "ESCENARIO",
+  "PLATINUM" : "PLATINO",
+  "PRESIDENTIAL" : "PRESIDENCIAL"
 }

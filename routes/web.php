@@ -10,6 +10,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/tickets', function () {
+    return view('tickets');
+});
+
 Route::get('/concerts', [ConcertController::class, 'index'])->name('concerts.index')->middleware(['auth', 'verified']);
 Route::get('/concerts/{concert}', [ConcertController::class, 'show'])->name('concerts.show')->middleware(['auth', 'verified']);
 Route::get('/concerts/create', [ConcertController::class, 'create'])->name('concerts.create')->middleware(['auth', 'verified']);
