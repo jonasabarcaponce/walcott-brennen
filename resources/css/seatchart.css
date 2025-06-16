@@ -1,0 +1,33 @@
+/* Seat style */
+.sc-seat {
+    border-radius: 100%;
+    /* width: 38px;
+    height: 38px; */
+}
+
+/* Seat Container */ 
+.sc-main-container {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+/* Seat Tariffs */ 
+.economy {
+color: white;
+background-color: #43aa8b;
+}
+
+.vip {
+    color: white;
+    background-color: #c19c60;
+}
+
+.platinum {
+    color: white;
+    background-color: #939393;
+}
+
+.handicapped {
+    color: white;
+    background-color: dodgerblue;
+}

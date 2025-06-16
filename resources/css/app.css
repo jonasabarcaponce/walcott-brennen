@@ -8,6 +8,11 @@
 /* Import font awesome  */
 @import '@fortawesome/fontawesome-free/css/all.css';
 
+/* Import Seat Chart CSS */
+@import 'seatchart/dist/seatchart.css';
+@import './seatchart.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
