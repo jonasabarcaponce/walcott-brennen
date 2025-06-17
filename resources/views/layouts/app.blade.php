@@ -15,6 +15,10 @@
                 <!-- Sidebar for desktop -->
                 <nav class="hidden md:flex flex-col w-64 h-full">
                     <x-application-logo class="fill-current text-black dark:text-gray-600 mx-auto w-20 py-10 mb-3" />
+                    <x-nav-link href="{{ route('eventos.index') }}" :active="request()->routeIs('eventos.*')">
+                        <i class="fa-solid fa-calendar-days mr-4"></i>
+                        {{ __('Events') }}
+                    </x-nav-link>
                     <x-nav-link href="#">
                         <i class="fa-solid fa-chart-simple mr-4"></i>
                         {{ __('Analytics') }}
@@ -23,7 +27,7 @@
                         <i class="fa-solid fa-bag-shopping mr-4"></i>
                         {{ __('Shop') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
+                    <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.*')">
                         <i class="fa-solid fa-user mr-4"></i>
                         {{ __('Account') }}
                     </x-nav-link>
@@ -45,6 +49,12 @@
                                         </button>
                                     </form>
                                 @endif
+                                @if (request()->routeIs('eventos.*'))
+                                    <a href="{{ route('eventos.create') }}" class="bg-jamband text-quireBlack font-bold text-sm py-2 px-4 rounded-3xl text-white">
+                                        <i class="fa-solid fa-plus mr-1"></i>
+                                        {{ __('Create Event') }}
+                                    </a>
+                                @endif
                             </div>
                         </header>
                     @endisset
@@ -62,17 +72,21 @@
         <!-- Bottom navbar for mobile -->
         <nav class="fixed bottom-0 left-0 right-0 md:hidden shadow-lg bg-gray-100 dark:bg-gray-800">
             <nav class="flex justify-around">
+                <x-responsive-nav-link href="{{ route('eventos.index') }}" :active="request()->routeIs('eventos.*')">
+                    <i class="fa-solid fa-calendar-days mb-1"></i>
+                    <span class="text-xs">{{ __('Events') }}</span>
+                </x-responsive-nav-link>
                 <x-responsive-nav-link href="#">
                     <i class="fa-solid fa-chart-simple mb-1"></i>
-                    <span class="text-xs">Estadisticas</span>
+                    <span class="text-xs">{{ __('Analytics') }}</span>
                 </x-responsive-nav-link>
                 <x-responsive-nav-link href="#">
                     <i class="fa-solid fa-bag-shopping mb-1"></i>
-                    <span class="text-xs">Tienda</span>
+                    <span class="text-xs">{{ __('Shop') }}</span>
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
+                <x-responsive-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.*')">
                     <i class="fa-solid fa-user mb-1"></i>
-                    <span class="text-xs">Cuenta</span>
+                    <span class="text-xs">{{ __('Account') }}</span>
                 </x-responsive-nav-link>
 
             </nav>

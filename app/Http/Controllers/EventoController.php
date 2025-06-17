@@ -13,7 +13,7 @@ class EventoController extends Controller
     public function index()
     {
         // Retrieve all events from the database
-        $eventos = Evento::all();
+        $eventos = Evento::paginate(4);
 
         // Return the view with the list of events
         return view('eventos.index', compact('eventos'));
@@ -25,6 +25,7 @@ class EventoController extends Controller
     public function create()
     {
         //
+        return view('eventos.create');
     }
 
     /**

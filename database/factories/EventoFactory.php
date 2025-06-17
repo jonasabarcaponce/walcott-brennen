@@ -22,7 +22,7 @@ class EventoFactory extends Factory
             'estado' => $this->faker->randomElement(['activo', 'cancelado', 'finalizado']),
             'auditorio' => $this->faker->randomElement(['Auditorio A', 'Auditorio B', 'Salón Principal']),
             'descripcion' => $this->faker->paragraph(),
-            'imagen' => $this->faker->imageUrl(640, 480, 'events', true, 'Evento'),
+            'imagen' => 'https://picsum.photos/1280/720?random=' . $this->faker->unique()->numberBetween(1, 1000),            
         ];
     }
 }

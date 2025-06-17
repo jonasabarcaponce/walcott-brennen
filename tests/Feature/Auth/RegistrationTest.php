@@ -15,5 +15,5 @@ test('new users can register', function () {
     ]);
 
     $this->assertAuthenticated();
-    $response->assertRedirect(route('concerts.index', absolute: false));
+    $response->assertRedirect(route('eventos.index', absolute: false));
 });

@@ -17,7 +17,7 @@ test('users can authenticate using the login screen', function () {
     ]);
 
     $this->assertAuthenticated();
-    $response->assertRedirect(route('concerts.index', absolute: false));
+    $response->assertRedirect(route('eventos.index', absolute: false));
 });
 
 test('users can not authenticate with invalid password', function () {

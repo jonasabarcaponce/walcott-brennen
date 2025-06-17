@@ -33,8 +33,15 @@
   "Are you sure you want to delete your account?": "¿Estás seguro de que quieres eliminar tu cuenta?", 
   "Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account." : "Una vez que tu cuenta sea eliminada, todos sus recursos y datos serán eliminados permanentemente. Por favor, ingresa tu contraseña para confirmar que deseas eliminar tu cuenta permanentemente.",
   "Analytics" : "Estadisticas",
-  "Shop" : "Tienda", 
-  "     STAGE": "ESCENARIO",
-  "PLATINUM" : "PLATINO",
-  "PRESIDENTIAL" : "PRESIDENCIAL"
+  "Events" : "Eventos",
+  "Create Event" : "Crear Evento",
+  "Edit Event" : "Editar Evento", 
+  "Event Name" : "Nombre del Evento",
+  "Event Date & Time" : "Fecha y Hora del Evento",
+  "Event Location" : "Ubicación del Evento",
+  "Event Description" : "Descripción del Evento",
+  "Enter a clear name for your event. This will help attendees recognize it easily." : "Ingresa un nombre claro para tu evento. Esto ayudará a los asistentes a reconocerlo fácilmente.",
+  "Select the exact date and start time for your event in local time." : "Selecciona la fecha exacta y la hora de inicio de tu evento en hora local.",
+  "Choose the venue or location where your event will take place." : "Elige el lugar o ubicación donde se llevará a cabo tu evento.",
+  "Provide a detailed description of your event, including any special features or highlights." : "Proporciona una descripción detallada de tu evento, incluyendo cualquier característica o aspecto destacado."
 }
