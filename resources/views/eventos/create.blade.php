@@ -18,7 +18,7 @@
                         </p>
                     </header>
                     <div class="mt-4">
-                        <input type="text" name="name" id="name" class="w-full border-gray-300 dark:border-gray-700 rounded p-2" autofocus required placeholder="e.g. Summer Music Festival">
+                        <input type="text" name="name" id="name" class="w-full border-gray-300 dark:border-gray-700 rounded p-2" autofocus required placeholder="{{ __('e.g. Summer Music Festival') }}">
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@
                         </p>
                     </header>
                     <div class="mt-4">
-                        <textarea name="description" id="description" rows="4" class="w-full border-gray-300 dark:border-gray-700 rounded p-2" required placeholder="Describe your event in detail..."></textarea>
+                        <textarea name="description" id="description" rows="4" class="w-full border-gray-300 dark:border-gray-700 rounded p-2" required placeholder="{{ __('Describe your event in detail...') }}"></textarea>
                     </div>
                 </div>
 

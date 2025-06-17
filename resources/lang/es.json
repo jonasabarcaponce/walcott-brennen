@@ -43,5 +43,9 @@
   "Enter a clear name for your event. This will help attendees recognize it easily." : "Ingresa un nombre claro para tu evento. Esto ayudará a los asistentes a reconocerlo fácilmente.",
   "Select the exact date and start time for your event in local time." : "Selecciona la fecha exacta y la hora de inicio de tu evento en hora local.",
   "Choose the venue or location where your event will take place." : "Elige el lugar o ubicación donde se llevará a cabo tu evento.",
-  "Provide a detailed description of your event, including any special features or highlights." : "Proporciona una descripción detallada de tu evento, incluyendo cualquier característica o aspecto destacado."
+  "Provide a detailed description of your event, including any special features or highlights." : "Proporciona una descripción detallada de tu evento, incluyendo cualquier característica o aspecto destacado.",
+  "e.g. Summer Music Festival" : "ej. Festival de Música de Verano",
+  "Describe your event in detail..." : "Describe tu evento a detalle...",
+  "Select a location" : "Selecciona una ubicación",
+  "Stoa Auditorium" : "Auditorio Stoa"
 }
