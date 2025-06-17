@@ -15,10 +15,6 @@
                 <!-- Sidebar for desktop -->
                 <nav class="hidden md:flex flex-col w-64 h-full">
                     <x-application-logo class="fill-current text-black dark:text-gray-600 mx-auto w-20 py-10 mb-3" />
-                    <x-nav-link :href="route('concerts.index')" :active="request()->routeIs('concerts.index')">
-                        <i class="fa-solid fa-music mr-4"></i>
-                        {{ __('Concerts') }}
-                    </x-nav-link>
                     <x-nav-link href="#">
                         <i class="fa-solid fa-chart-simple mr-4"></i>
                         {{ __('Analytics') }}
@@ -40,14 +36,6 @@
                         <header>
                             <div class="max-w-7xl py-10 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
                                 {{ $header }}
-                                @if (request()->routeIs('concerts.*'))
-                                    <div>
-                                        <button class="bg-jamband text-quireBlack font-bold text-sm py-2 px-4 rounded-3xl text-white">
-                                            <i class="fa-solid fa-plus mr-1"></i>
-                                            {{ __('Create Concert') }} 
-                                        </button>
-                                    </div>
-                                @endif
                                 @if (request()->routeIs('profile.*'))
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
@@ -74,10 +62,6 @@
         <!-- Bottom navbar for mobile -->
         <nav class="fixed bottom-0 left-0 right-0 md:hidden shadow-lg bg-gray-100 dark:bg-gray-800">
             <nav class="flex justify-around">
-                <x-responsive-nav-link :href="route('concerts.index')" :active="request()->routeIs('concerts.index')">
-                    <i class="fa-solid fa-wallet mb-1"></i>
-                    <span class="text-xs">Conciertos</span>
-                </x-responsive-nav-link>
                 <x-responsive-nav-link href="#">
                     <i class="fa-solid fa-chart-simple mb-1"></i>
                     <span class="text-xs">Estadisticas</span>
