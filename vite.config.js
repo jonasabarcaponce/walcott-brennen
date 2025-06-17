@@ -7,7 +7,7 @@ export default defineConfig({
         laravel({
             input: [
                 ...glob.sync('resources/css/*'),
-                ...glob.sync('resources/js/*'),
+                ...glob.sync('resources/js/*.js'),
                 ...glob.sync('resources/js/**/*.js'),
                 ...glob.sync('resources/img/*.png'),
                 ...glob.sync('resources/img/*.jpg'),
